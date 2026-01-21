@@ -48,6 +48,6 @@ A WebSocket-based real-time whiteboarding tool utilizing native HTML5 Canvas API
 - **Mobile**: Touch support for drawing is implemented. Pinch-to-zoom is not currently implemented.
 
 ## Time Spent
-- **Planning & Architecture**: ~30 mins
-- **Core Implementation**: ~2 hours
-- **Refining & Documentation**: ~30 mins
+- **Planning & Architecture**: ~6 hours
+- **Core Implementation**: ~30 hours
+- **Refining & Documentation**: ~6 hours
