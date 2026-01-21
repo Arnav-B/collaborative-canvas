@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background: #1e1e1e;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#canvas-container {
+    flex: 1;
+    position: relative;
+    cursor: crosshair;
+    background: #ffffff;
+
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+#drawing-canvas,
+#cursor-canvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#cursor-canvas {
+    pointer-events: none;
+
+    z-index: 10;
+}
+
+#toolbar {
+    padding: 15px;
+    background: #2d2d2d;
+    display: flex;
+    gap: 20px;
+    border-bottom: 1px solid #3d3d3d;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+.tool-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-right: 20px;
+    border-right: 1px solid #444;
+}
+
+.tool-group:last-child {
+    border-right: none;
+}
+
+label {
+    font-size: 0.9em;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+button {
+    background: #444;
+    border: 1px solid #555;
+    color: #eee;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+button:hover {
+    background: #555;
+}
+
+button.active {
+    background: #007acc;
+    border-color: #008be6;
+    color: white;
+    box-shadow: 0 0 8px rgba(0, 122, 204, 0.5);
+}
+
+
+input[type="color"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    padding: 0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.color-presets {
+    display: flex;
+    gap: 5px;
+}
+
+.color-btn {
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border: 2px solid #555;
+    border-radius: 50%;
+}
+
+.color-btn:hover {
+    transform: scale(1.1);
+}
+
+
+#user-list {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(45, 45, 45, 0.9);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    border: 1px solid #444;
+    min-width: 150px;
+}
+
+.user-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+.user-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
