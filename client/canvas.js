@@ -71,7 +71,7 @@ export class CanvasManager {
                     y,
                     text,
                     color: this.color,
-                    size: this.lineWidth * 5 // Scale up a bit for visibility
+                    size: this.lineWidth * 5 
                 }, true);
             }
             this.isDrawing = false;
@@ -109,7 +109,7 @@ export class CanvasManager {
 
                 if (this.onDraw) {
                     this.onDraw({
-                        type: 'draw', // 'draw' implies freehand line
+                        type: 'draw', 
                         x: p2.x,
                         y: p2.y,
                         prevX: p1.x,
@@ -120,10 +120,8 @@ export class CanvasManager {
                 }
             }
         } else if (this.tool === 'rectangle' || this.tool === 'circle') {
-            // Preview on cursor canvas
-            // We need to redraw cursors as well or they disappear? 
-            // Ideally we separate, but for now we'll just clear and redraw the shape
-            this.renderCursors(); // Clear and redraw other cursors
+           
+            this.renderCursors(); 
 
             this.cursorCtx.beginPath();
             this.cursorCtx.strokeStyle = this.color;
@@ -146,9 +144,9 @@ export class CanvasManager {
         if (!this.isDrawing) return;
         this.isDrawing = false;
 
-        // Finalize shape
+       
         if (this.tool === 'rectangle' || this.tool === 'circle') {
-            // Clear preview
+          
             this.renderCursors();
 
             const x = e.offsetX;
@@ -210,7 +208,7 @@ export class CanvasManager {
 
     drawRemote(data) {
         if (data.type === 'draw') {
-            // Legacy/Brush line
+           
             const { prevX, prevY, x, y, color, width } = data;
             this.ctx.beginPath();
             this.ctx.strokeStyle = color;
@@ -219,7 +217,7 @@ export class CanvasManager {
             this.ctx.lineTo(x, y);
             this.ctx.stroke();
         } else {
-            // Shapes and text
+         
             this.drawShape(data, false);
         }
     }
